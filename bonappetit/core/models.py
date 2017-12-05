@@ -3,7 +3,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-# Create your models here.
+
+
 class Tipo_produto(models.Model):
 	descricao = models.CharField('Descrição', max_length=200)
 
@@ -14,7 +15,11 @@ class Produto(models.Model):
 	id_tipoProduto = models.ForeignKey(Tipo_produto, on_delete=models.CASCADE)
 	def __str__(self):
 		return self.nome
+
 	 
+
+
+
 class Cliente(models.Model):
 	email = models.CharField('Email', max_length=20)
 	senha = models.CharField('Senha', max_length=15)
@@ -29,7 +34,6 @@ class Cliente(models.Model):
 
 
 class Pedido(models.Model):
-	
 	data = models.DateField(auto_now=True, auto_now_add=False)
 	forma_pagamento = models.CharField('Forma de Pagamento', max_length=14)
 	id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
@@ -46,3 +50,12 @@ class Contato(models.Model):
 	id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 	def __str__(self):
 		return self.id_cliente
+
+		return self.id_cliente
+
+class Gerenciaralimento(models.Model):
+	codAlimento = models.CharField('CodAlimento ', max_length=50)
+	descricao= models.CharField('Descricao', max_length=100)
+	porcao = models.CharField('Porcao ', max_length=50)
+	preco = models.DecimalField('Preco ', max_digits=5, decimal_places=2)
+
