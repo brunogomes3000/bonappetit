@@ -10,7 +10,7 @@ def index(request):
 
 def Produto(request):
 	produtos = Produto.object.all(0)
-	return render(request, 'index.html')
+	#return render(request, 'produtos.html')
 
 #terminar a listagem de produtos
 
