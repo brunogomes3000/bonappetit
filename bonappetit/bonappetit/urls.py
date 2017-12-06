@@ -15,14 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-<<<<<<< HEAD
+
 from core.views import index
 
 urlpatterns = [
     url(r'^$',index),
     url(r'^admin/', admin.site.urls),
 
-=======
+
 from core import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -31,6 +31,5 @@ from django.conf.urls.static import static
 urlpatterns = [
 	url(r'^$', views.index, name="index"),
 	url(r'^admin/', admin.site.urls),
->>>>>>> 6a3588a45c583eb7853017fb141feb513de4f082
 ]
 
