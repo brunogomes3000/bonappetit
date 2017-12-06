@@ -5,10 +5,8 @@ from django.contrib import admin
 
 
 from .models import GerenciarAlimento
-
 admin.site.register(GerenciarAlimento)
 
-# Register your models here.
 from .models import Produto
 admin.site.register(Produto)
 
