@@ -7,7 +7,9 @@ from django.http import HttpResponse
 def index(request):
 	return HttpResponse('Gerenciando ALimentos')
 
-from django.http import HttpResponse
-# Create your views here.
+def index(request):
+	return render(request, 'index.html')
+
+
 def index (request):
 	return render(request, 'index.html')

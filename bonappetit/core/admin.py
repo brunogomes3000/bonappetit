@@ -8,7 +8,7 @@ from .models import GerenciarAlimento
 
 admin.site.register(GerenciarAlimento)
 
-
+# Register your models here.
 from .models import Produto
 admin.site.register(Produto)
 
@@ -26,4 +26,3 @@ admin.site.register(Cliente)
 
 from .models import Contato
 admin.site.register(Contato)
-
