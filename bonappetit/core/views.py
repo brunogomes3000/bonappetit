@@ -11,17 +11,6 @@ def index(request):
 	return render(request, 'index.html')
 
 # Create your views here.
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-=======
 def index (request):
 	return render(request, 'index.html')
->>>>>>> 0150649f373f9a6866b4e6fba43bd3ff444f4380
+
