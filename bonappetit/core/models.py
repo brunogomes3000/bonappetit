@@ -4,10 +4,6 @@ from __future__ import unicode_literals
 from django.db import models
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 02fb07440d6877c88e1f50fe652473f96a2134e9
 class GerenciarAlimento(models.Model):
 	codAlimento = models.AutoField(primary_key=True, max_length=50)
 
