@@ -1,13 +1,11 @@
-# -*- coding: utf-8 -*-
+
 from __future__ import unicode_literals
 
 from django.db import models
 
 
-<<<<<<< HEAD
 class GerenciarAlimento(models.Model):
 	codAlimento = models.AutoField(primary_key=True, max_length=50)
-=======
 
 class Tipo_produto(models.Model):
 	descricao = models.CharField('Descrição', max_length=200)
@@ -59,7 +57,6 @@ class Contato(models.Model):
 
 class Gerenciaralimento(models.Model):
 	codAlimento = models.CharField('CodAlimento ', max_length=50)
->>>>>>> 6a3588a45c583eb7853017fb141feb513de4f082
 	descricao= models.CharField('Descricao', max_length=100)
 	porcao = models.CharField('Porcao ', max_length=50)
 	preco = models.DecimalField('Preco ', max_digits=5, decimal_places=2)
