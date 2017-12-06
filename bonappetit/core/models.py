@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+
 class Tipo_produto(models.Model):
 	descricao = models.CharField('Descrição', max_length=200)
 
