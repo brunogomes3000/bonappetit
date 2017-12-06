@@ -56,7 +56,7 @@ class Contato(models.Model):
 
 		return self.id_cliente
 
-class Gerenciaralimento(models.Model):
+class GerenciarAlimento(models.Model):
 	codAlimento = models.CharField('CodAlimento ', max_length=50)
 	descricao= models.CharField('Descricao', max_length=100)
 	porcao = models.CharField('Porcao ', max_length=50)
