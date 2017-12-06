@@ -3,11 +3,6 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 02fb07440d6877c88e1f50fe652473f96a2134e9
 class GerenciarAlimento(models.Model):
 	codAlimento = models.AutoField(primary_key=True, max_length=50)
 
@@ -21,10 +16,6 @@ class Produto(models.Model):
 	id_tipoProduto = models.ForeignKey(Tipo_produto, on_delete=models.CASCADE)
 	def __str__(self):
 		return self.nome
-
-	 
-
-
 
 class Cliente(models.Model):
 	email = models.CharField('Email', max_length=20)
@@ -55,8 +46,6 @@ class Contato(models.Model):
 	numero = models.CharField('Numero', max_length=12)
 	id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 	def __str__(self):
-		return self.id_cliente
-
 		return self.id_cliente
 
 class GerenciarAlimento(models.Model):
