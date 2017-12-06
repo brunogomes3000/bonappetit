@@ -9,7 +9,7 @@ def index(request):
 
 	return render(request, 'index.html')
 
-	return HttpResponse('Gerenciando ALimentos')
+	#return HttpResponse('Gerenciando ALimentos')
 
 def Produto(request):
 	produtos = Produto.object.all(0)
@@ -21,3 +21,4 @@ def Produto(request):
 
 def Pedido(request):
 	pedido = Pedido.object.all(0)
+ 
