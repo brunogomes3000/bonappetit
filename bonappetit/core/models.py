@@ -4,10 +4,6 @@ from __future__ import unicode_literals
 from django.db import models
 
 
-class GerenciarAlimento(models.Model):
-	codAlimento = models.AutoField(primary_key=True, max_length=50)
-
-
 class Tipo_produto(models.Model):
 	descricao = models.CharField('Descrição', max_length=200)
 
