@@ -19,6 +19,12 @@ admin.site.register(Pedido_produto)
 from .models import Pedido
 admin.site.register(Pedido)
 
+class PedidoAdmin(admin.ModelAdmin)
+	list_display = ['data', 'forma_pagamento', 'id_cliente']
+	list_filter = ['data']
+
+admin.site.register(Pedido, PedidoAdmin)
+
 from .models import Cliente
 admin.site.register(Cliente)
 
