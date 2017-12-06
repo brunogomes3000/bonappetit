@@ -7,6 +7,7 @@ from django.db import models
 class GerenciarAlimento(models.Model):
 	codAlimento = models.AutoField(primary_key=True, max_length=50)
 
+
 class Tipo_produto(models.Model):
 	descricao = models.CharField('Descrição', max_length=200)
 
@@ -18,10 +19,6 @@ class Produto(models.Model):
 	def __str__(self):
 		return self.nome
 
-	 
-
-
-
 class Cliente(models.Model):
 	email = models.CharField('Email', max_length=20)
 	senha = models.CharField('Senha', max_length=15)
@@ -32,8 +29,6 @@ class Cliente(models.Model):
 	admin = models.BooleanField('Administrador')
 	def __str__(self):
 		return self.nome
-
-
 
 class Pedido(models.Model):
 	data = models.DateField(auto_now=True, auto_now_add=False)
@@ -51,8 +46,6 @@ class Contato(models.Model):
 	numero = models.CharField('Numero', max_length=12)
 	id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 	def __str__(self):
-		return self.id_cliente
-
 		return self.id_cliente
 
 class GerenciarAlimento(models.Model):
