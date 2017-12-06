@@ -12,6 +12,9 @@ def Produto(request):
 	produtos = Produto.object.all(0)
 	#return render(request, 'produtos.html')
 
+
 #terminar a listagem de produtos
 
 
+def Pedido(request):
+	pedido = Pedido.object.all(0)
