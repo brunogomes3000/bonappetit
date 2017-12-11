@@ -15,14 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from core.views import index
+from core.views import Pedido
+from core.views import Produto
 from core import views
 from django.conf import settings
 from django.conf.urls.static import static
 
 
 urlpatterns = [
-	url(r'^$', views.index, name="index"),
-	url(r'^admin/', admin.site.urls),
+	url(r'^$', views.Pedido, name="Pedido"),
+]
+
+urlpatterns = [
+	url(r'^$', views.Produto, name="Produto"),
 ]
 
