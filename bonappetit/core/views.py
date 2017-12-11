@@ -10,7 +10,6 @@ def index(request):
 def index(request):
 	return render(request, 'index.html')
 
-
 def Pedido(request):
 	pedido = Pedido.object.all(0)
 	# código que liste as vendas realizadas durante uma data determinada

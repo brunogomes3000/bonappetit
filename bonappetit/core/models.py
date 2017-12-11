@@ -3,37 +3,28 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 6873e3349391233bbbc9040784b52db236940d27
-class GerenciarAlimento(models.Model):
-	codAlimento = models.AutoField(primary_key=True, max_length=50)
 
 class Tipo_produto(models.Model):
 	descricao = models.CharField('Descrição', max_length=200)
 
 class Produto(models.Model):
-	descricao = models.CharField('Descrição', max_length=200)
 	nome = models.CharField('Nome', max_length=50)
-	preco = models.CharField('Preço', max_length=4)
+	descricao = models.CharField('Descrição do alimento', max_length=200)
+	preco = models.CharField('Preço', max_length=10)
 	id_tipoProduto = models.ForeignKey(Tipo_produto, on_delete=models.CASCADE)
 	def __str__(self):
 		return self.nome
 
 class Cliente(models.Model):
-	email = models.CharField('Email', max_length=20)
-	senha = models.CharField('Senha', max_length=15)
 	nome = models.CharField('Nome', max_length=50)
-	cep = models.CharField('Cep', max_length=8)
 	logradouro = models.CharField('Logradouro', max_length=30)
-	numero = models.CharField('Numero', max_length=3)
+	numero = models.CharField('Número', max_length=3)
+	cep = models.CharField('Cep', max_length=8)
+	email = models.EmailField('Email', max_length=20)
+	senha = models.CharField('Senha', max_length=15)
 	admin = models.BooleanField('Administrador')
 	def __str__(self):
 		return self.nome
-
-
 
 class Pedido(models.Model):
 	data = models.DateField(auto_now=True, auto_now_add=False)
@@ -46,16 +37,10 @@ class Pedido_produto(models.Model):
 	id_produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
 
 
-
 class Contato(models.Model):
 	numero = models.CharField('Numero', max_length=12)
 	id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 	def __str__(self):
 		return self.id_cliente
 
-class GerenciarAlimento(models.Model):
-	codAlimento = models.CharField('CódigoAlimento ', max_length=50)
-	descricao= models.CharField('Descrição', max_length=100)
-	porcao = models.CharField('Porção ', max_length=50)
-	preco = models.DecimalField('Preço ', max_digits=5, decimal_places=2)
 
