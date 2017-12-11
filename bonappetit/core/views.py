@@ -21,4 +21,7 @@ def Produto(request):
 
 def Pedido(request):
 	pedido = Pedido.object.all(0)
- 
+
+# página de login
+def usuario(request):
+	return render(request, 'usuario.html') 
