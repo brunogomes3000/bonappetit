@@ -15,6 +15,11 @@ class Produto(models.Model):
 	def __str__(self):
 		return self.nome
 
+	class Meta:
+		verbose_name = 'Produto'
+		verbose_name_plural = 'Produtos'
+		ordering = ['nome']
+		
 class Cliente(models.Model):
 	nome = models.CharField('Nome', max_length=50)
 	logradouro = models.CharField('Logradouro', max_length=30)
@@ -42,5 +47,12 @@ class Contato(models.Model):
 	id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 	def __str__(self):
 		return self.id_cliente
+
+
+class GerenciarAlimento(models.Model):
+	codAlimento = models.CharField('CodAlimento ', max_length=50)
+	descricao= models.CharField('Descricao', max_length=100)
+	porcao = models.CharField('Porcao ', max_length=50)
+	preco = models.DecimalField('Preco ', max_digits=5, decimal_places=2)
 
 
