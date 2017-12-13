@@ -10,6 +10,7 @@ class Tipo_produto(models.Model):
 class Produto(models.Model):
 	nome = models.CharField('Nome', max_length=50)
 	descricao = models.CharField('Descrição do alimento', max_length=200)
+	grama = models.CharField('Grama', max_length=4)
 	preco = models.CharField('Preço', max_length=10)
 	id_tipoProduto = models.ForeignKey(Tipo_produto, on_delete=models.CASCADE)
 	def __str__(self):
@@ -19,7 +20,7 @@ class Produto(models.Model):
 		verbose_name = 'Produto'
 		verbose_name_plural = 'Produtos'
 		ordering = ['nome']
-		
+
 class Cliente(models.Model):
 	nome = models.CharField('Nome', max_length=50)
 	logradouro = models.CharField('Logradouro', max_length=30)
@@ -30,6 +31,7 @@ class Cliente(models.Model):
 	admin = models.BooleanField('Administrador')
 	def __str__(self):
 		return self.nome
+
 
 class Pedido(models.Model):
 	data = models.DateField(auto_now=True, auto_now_add=False)
@@ -56,3 +58,16 @@ class GerenciarAlimento(models.Model):
 	preco = models.DecimalField('Preco ', max_digits=5, decimal_places=2)
 
 
+'''
+class Consulta(models.Model):
+	nome = models.CharField('Nome', max_length=200)
+	produtos = models.ManyToManyField('Produtos',blank=True,null=True)
+
+Consulta.objects.filter(produtos__isnull=False).distinct("id").order_by("id")
+
+consultas = Consulta.objects.annotate(
+	mostrar_produtos=models.Count('id_produto')
+).filter(
+	models.Q(mostrar_produtos__gt=0)
+).order_by("-id")
+'''

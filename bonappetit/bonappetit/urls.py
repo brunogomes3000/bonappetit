@@ -15,18 +15,25 @@ Including another URLconf
     """
 from django.conf.urls import url
 from django.contrib import admin
-from core.views import index
+from core.views import Pedido
+from core.views import Produto
 from core import views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import login
 
+
 urlpatterns = [
+	url(r'^$', views.Produto, name="Produto"),
 	url(r'^$', views.index, name="index"),
+    url(r'^produto/$', views.Produto, name="Produto"),
+    url(r'^consultarAlimentos/$', views.consultarAlimentos, name="consultarAlimentos"),
+    url(r'^pedido/$', views.Pedido, name="Pedido"),
 	url(r'^usuario/$', views.usuario,name="usuario"),
-	url(r'^admin/', admin.site.urls),
 	url(r'^login/$', login, {'template_name':'login.html'}, name="login"),
 	url(r'^produtos/$', views.produtos, name="produtos"),
 	url(r'^cadastro/$', views.cadastro, name="cadastro"),
+    url(r'^admin/', admin.site.urls),
+
 ]
 
