@@ -13,7 +13,6 @@ from django.shortcuts import redirect
 def produtos(request):
 	return render(request, 'produtos.html')
 
-
 #controlador da PÁGINA cadastro
 def cadastro(request):
 	return render(request, 'cadastro.html')	
@@ -40,6 +39,8 @@ def produto(request):
 
 
 
+#terminar a listagem de produtos
+
 def cadastro(request):
 	form = UserCreationForm(request.POST or None)
 	form2 = UserCreationForm(request.POST or None)
@@ -58,11 +59,15 @@ def cadastro(request):
 	return render(request, 'cadastro.html', context)
 
 
-def pedido(request):
 
+def pedido(request):
 	pedido = Pedido.objects.all()
 
 
 # página de login
 def usuario(request):
 	return render(request, 'usuario.html')
+
+def relatorio(request):
+	return render(request, 'relatorio.html')
+
