@@ -34,7 +34,7 @@ class Cliente(models.Model):
 
 
 class Pedido(models.Model):
-	data = models.DateField(auto_now=True, auto_now_add=False)
+	data = models.DateField('Data', auto_now=True, auto_now_add=False)
 	forma_pagamento = models.CharField('Forma de Pagamento', max_length=14)
 	id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 
