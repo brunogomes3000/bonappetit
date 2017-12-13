@@ -9,9 +9,16 @@ from .models import Pedido
 from django.shortcuts import render
 from django.http import HttpResponse 
 
+
 def consultarAlimentos(request):
 	return render(request, 'consultarAlimentos.html')
 	produtos.objects.all()
+
+def index(request):
+
+	return render(request, 'index.html')
+
+	#return HttpResponse('Gerenciando ALimentos')
 
 def Produto(request):
 	produtos = Produto.object.all(0)
@@ -23,3 +30,4 @@ def Produto(request):
 
 def Pedido(request):
 	pedido = Pedido.object.all(0)
+ 
