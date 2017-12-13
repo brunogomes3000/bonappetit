@@ -31,6 +31,7 @@ class Cliente(models.Model):
 	def __str__(self):
 		return self.nome
 
+
 class Pedido(models.Model):
 	data = models.DateField(auto_now=True, auto_now_add=False)
 	forma_pagamento = models.CharField('Forma de Pagamento', max_length=14)
