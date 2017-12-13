@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+  <title>BON APPETÍT</title>
+
+  <link href="{% static 'css/paginainicial.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle navbar-toggle-sidebar collapsed">
+          MENU
+        </button>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">      
+        <form class="navbar-form navbar-left" method="GET" role="search">
+          <div class="form-group">
+            <input type="text" name="q" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{% url 'login' %}">Autenticar</a></li>
+          
+        </ul>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>    <div class="container-fluid main-container">
+<div class="col-md-2 sidebar">
+  <div class="row">
+    <!-- uncomment code for absolute positioning tweek see top comment in css -->
+    <div class="absolute-wrapper"> </div>
+    <!-- Menu -->
+    <div class="side-menu">
+      <nav class="navbar navbar-default" role="navigation">
+        <!-- Main Menu -->
+        <div class="side-menu-container">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="{% url 'index' %}"><span class=""></span> Apresentação </a></li>
+            <li><a href="{% url 'produtos' %}"><span class=""></span> Produtos</a></li>
+            <li><a href="{% url 'cadastro' %}"><span class=""></span> Cadastro</a></li>
+            <li><a href="{% url 'login' %}"><span class=""></span> Autenticação</a></li>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+    </div>
+  </div>      
+</div>
+{% block conteudo %}
+
+{% endblock %}
+  <footer class="pull-left footer">
+    <p class="col-md-12">
+      <hr class="divider">
+      Copyright &COPY; 2017 <a href="">EQUIPE BON APPETÍT</a>
+    </p>
+  </footer>
+</div>
+
+<script src="{% static 'js/javaPaginainicial.js' %}"></script>
+
+</body>  
+
+
+
+</html>
