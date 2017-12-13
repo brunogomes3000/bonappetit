@@ -6,6 +6,7 @@ from .models import Pedido
 from django.shortcuts import render
 from django.http import HttpResponse 
 from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import redirect
 
 
 #controlador da PÁGINA produtos
@@ -52,6 +53,7 @@ def cadastro(request):
 			user = user_post.save(commit=False)
 			user.set_password(user_post.cleaned_data['password'])
 			user.save()
+			return redirect('/cadastro')
 		form.save()
 	return render(request, 'cadastro.html', context)
 
