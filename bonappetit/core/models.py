@@ -10,6 +10,7 @@ class Tipo_produto(models.Model):
 class Produto(models.Model):
 	nome = models.CharField('Nome', max_length=50)
 	descricao = models.CharField('Descrição do alimento', max_length=200)
+	grama = models.CharField('Grama', max_length=4)
 	preco = models.CharField('Preço', max_length=10)
 	id_tipoProduto = models.ForeignKey(Tipo_produto, on_delete=models.CASCADE)
 	def __str__(self):
