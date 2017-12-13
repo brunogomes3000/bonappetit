@@ -57,3 +57,16 @@ class GerenciarAlimento(models.Model):
 	preco = models.DecimalField('Preco ', max_digits=5, decimal_places=2)
 
 
+'''
+class Consulta(models.Model):
+	nome = models.CharField('Nome', max_length=200)
+	produtos = models.ManyToManyField('Produtos',blank=True,null=True)
+
+Consulta.objects.filter(produtos__isnull=False).distinct("id").order_by("id")
+
+consultas = Consulta.objects.annotate(
+	mostrar_produtos=models.Count('id_produto')
+).filter(
+	models.Q(mostrar_produtos__gt=0)
+).order_by("-id")
+'''

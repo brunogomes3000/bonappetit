@@ -3,16 +3,17 @@ from __future__ import unicode_literals
 from .models import Produto
 from .models import Pedido_produto
 from .models import Pedido
-
-
-
 from django.shortcuts import render
 from django.http import HttpResponse 
 
 
 def consultarAlimentos(request):
-	return render(request, 'consultarAlimentos.html')
-	produtos.objects.all()
+	produtos = Produto.objects.all()
+	context = {
+		'produtos': produtos
+	}
+	return render(request, 'consultarAlimentos.html', context)
+	
 
 def index(request):
 
@@ -22,7 +23,7 @@ def index(request):
 	#return HttpResponse('Gerenciando ALimentos')
 
 def Produto(request):
-	produtos = Produto.object.all(0)
+	produtos = Produto.objects.all()
 	return render(request, 'produtos.html')
 
 
@@ -31,7 +32,7 @@ def Produto(request):
 
 
 def Pedido(request):
-	pedido = Pedido.object.all(0)
+	pedido = Pedido.objects.all()
 
 # página de login
 def usuario(request):
