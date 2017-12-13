@@ -18,6 +18,7 @@ def index(request):
 
 	return render(request, 'index.html')
 
+
 	#return HttpResponse('Gerenciando ALimentos')
 
 def Produto(request):
@@ -28,6 +29,10 @@ def Produto(request):
 #terminar a listagem de produtos
 
 
+
 def Pedido(request):
 	pedido = Pedido.object.all(0)
- 
+
+# página de login
+def usuario(request):
+	return render(request, 'usuario.html') 

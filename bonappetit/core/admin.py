@@ -4,11 +4,12 @@ from __future__ import unicode_literals
 from django.contrib import admin
 
 
-from .models import GerenciarAlimento
-admin.site.register(GerenciarAlimento)
-
 from .models import Produto
-admin.site.register(Produto)
+ 
+class ProdutoAdmin(admin.ModelAdmin):
+	list_display = ['nome', 'descricao', 'preco']
+
+admin.site.register(Produto, ProdutoAdmin)
 
 from .models import Tipo_produto
 admin.site.register(Tipo_produto)
