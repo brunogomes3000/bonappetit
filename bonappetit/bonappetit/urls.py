@@ -31,6 +31,9 @@ urlpatterns = [
     url(r'^pedido/$', views.pedido, name="pedido"),
 	url(r'^usuario/$', views.usuario,name="usuario"),
 	url(r'^login/$', login, {'template_name':'login.html'}, name="login"),
+	url(r'^produtos/$', views.produtos, name="produtos"),
+	url(r'^cadastro/$', views.cadastro, name="cadastro"),
     url(r'^admin/', admin.site.urls),
+
 ]
 
