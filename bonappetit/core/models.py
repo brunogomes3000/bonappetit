@@ -19,7 +19,7 @@ class Produto(models.Model):
 		verbose_name = 'Produto'
 		verbose_name_plural = 'Produtos'
 		ordering = ['nome']
-		
+
 class Cliente(models.Model):
 	nome = models.CharField('Nome', max_length=50)
 	logradouro = models.CharField('Logradouro', max_length=30)
