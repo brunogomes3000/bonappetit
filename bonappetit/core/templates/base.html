@@ -10,6 +10,33 @@
 
 <body>
   <nav class="navbar navbar-default navbar-static-top">
+
+
+  {% if not user.is_authenticated %}
+    <div class="col-lg-8">
+     <h1>Cadastre-se!</h1>
+      <p>Faça já o seu cadastro para comprar as melhores quentinhas!</p>
+    </div>
+    <div class="col-lg-4">
+      <p class="pull-right"><br><a href="{% url 'cadastro' %}"><button
+      type="button" class="btn btn-green">Cadastro</button></a> <a
+      href="{% url 'login' %}"><button type="button" class="btn btn-green">Autenticar</button></a></p>
+      </div>
+
+    {% else %}
+
+    <div class="col-lg-8">
+     <h1>Bem-vindo {{user}}</h1>
+      <p>Você já está inscrito!</p>
+      </div>
+    <div class="col-lg-4">
+      <p class="pull-right"><br><a href="{% url 'usuario' %}"><button
+      type="button" class="btn btn-green">Cadastro</button></a></p>
+    </div>
+    {% endif %}
+
+
+
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
