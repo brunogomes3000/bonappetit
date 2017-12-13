@@ -37,7 +37,9 @@ def produto(request):
 	return render(request, 'produtos.html')
 
 
+
 #terminar a listagem de produtos
+
 def cadastro(request):
 	form = UserCreationForm(request.POST or None)
 	form2 = UserCreationForm(request.POST or None)
@@ -53,6 +55,8 @@ def cadastro(request):
 			user.save()
 		form.save()
 	return render(request, 'cadastro.html', context)
+
+
 
 def pedido(request):
 	pedido = Pedido.objects.all()
