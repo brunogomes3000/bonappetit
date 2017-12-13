@@ -24,6 +24,7 @@ from django.contrib.auth.views import login
 
 
 urlpatterns = [
+	url(r'^$', views.Produto, name="Produto"),
 	url(r'^$', views.index, name="index"),
     url(r'^produto/$', views.Produto, name="Produto"),
     url(r'^consultarAlimentos/$', views.consultarAlimentos, name="consultarAlimentos"),
@@ -31,6 +32,5 @@ urlpatterns = [
 	url(r'^usuario/$', views.usuario,name="usuario"),
 	url(r'^login/$', login, {'template_name':'login.html'}, name="login"),
     url(r'^admin/', admin.site.urls),
-
 ]
 

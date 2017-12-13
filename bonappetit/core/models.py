@@ -10,6 +10,7 @@ class Tipo_produto(models.Model):
 class Produto(models.Model):
 	nome = models.CharField('Nome', max_length=50)
 	descricao = models.CharField('Descrição do alimento', max_length=200)
+	grama = models.CharField('Grama', max_length=4)
 	preco = models.CharField('Preço', max_length=10)
 	id_tipoProduto = models.ForeignKey(Tipo_produto, on_delete=models.CASCADE)
 	def __str__(self):
@@ -19,7 +20,7 @@ class Produto(models.Model):
 		verbose_name = 'Produto'
 		verbose_name_plural = 'Produtos'
 		ordering = ['nome']
-		
+
 class Cliente(models.Model):
 	nome = models.CharField('Nome', max_length=50)
 	logradouro = models.CharField('Logradouro', max_length=30)
