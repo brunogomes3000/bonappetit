@@ -39,6 +39,7 @@ def produto(request):
 
 
 #terminar a listagem de produtos
+<<<<<<< HEAD
 def cadastro(request):
 	form = UserCreationForm(request.POST or None)
 	form2 = UserCreationForm(request.POST or None)
@@ -59,6 +60,9 @@ def cadastro(request):
 def pedido(request):
 
 def Pedido(request):
+=======
+def pedido(request):
+>>>>>>> 35b8613cf8811c7b307b7416b94e5c98a6948ce4
 	pedido = Pedido.objects.all()
 
 
