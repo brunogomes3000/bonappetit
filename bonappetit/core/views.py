@@ -22,7 +22,7 @@ def index(request):
 
 	#return HttpResponse('Gerenciando ALimentos')
 
-def Produto(request):
+def produto(request):
 	produtos = Produto.objects.all()
 	return render(request, 'produtos.html')
 
@@ -31,7 +31,7 @@ def Produto(request):
 
 
 
-def Pedido(request):
+def pedido(request):
 	pedido = Pedido.objects.all()
 
 # página de login
