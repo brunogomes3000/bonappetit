@@ -7,7 +7,7 @@ from django.contrib import admin
 from .models import Produto
  
 class ProdutoAdmin(admin.ModelAdmin):
-	list_display = ['nome', 'descricao', 'grama', 'preco']
+	list_display = ['nome', 'descricao', 'preco']
 	search_fields = ['nome']
 
 
