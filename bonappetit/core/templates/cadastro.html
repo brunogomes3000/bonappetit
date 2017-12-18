@@ -10,12 +10,15 @@ Cadastro | {{ block.super }}
 <div class="row mt">
 <form action="{% url 'cadastro' %}" method="post">
 {% csrf_token %}
-	<p>{{form.email.label}}: {{form.email}}</p>
-	<p>{{form.Nome.label}}: {{form.nome}}</p>
-	<p>{{form.username.label}}: {{form.username}}</p>
-	<p>{{form.password1.label}}: {{form.password1}}</p>
-	<p>{{form.password2.label}}: {{form.password2}}</p>
-	<p><input type="submit" value="Cadastrar" /></p>
+<p>{{form2.nome.label}}: {{form2.nome}}</p>
+<p>{{form2.email.label}}: {{form2.email}}</p>
+
+<p>{{form2.cep.label}}: {{form2.cep}}</p>
+<p>{{form2.numero.label}}: {{form2.numero}}</p>
+<!--<p>{{form.username.label}}: {{form.username}}</p>-->
+<p>{{form.password1.label}}: {{form.password1}}</p>
+<p>{{form.password2.label}}: {{form.password2}}</p>
+<p><input type="submit" value="Cadastrar" /></p>
 
 </form>
 </div>

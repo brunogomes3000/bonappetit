@@ -10,7 +10,6 @@ class Tipo_produto(models.Model):
 class Produto(models.Model):
 	nome = models.CharField('Nome', max_length=50)
 	descricao = models.CharField('Descrição do alimento', max_length=200)
-	grama = models.CharField('Grama', max_length=4)
 	preco = models.CharField('Preço', max_length=10)
 	id_tipoProduto = models.ForeignKey(Tipo_produto, on_delete=models.CASCADE)
 	def __str__(self):
@@ -26,7 +25,7 @@ class Cliente(models.Model):
 	logradouro = models.CharField('Logradouro', max_length=30)
 	numero = models.CharField('Número', max_length=3)
 	cep = models.CharField('Cep', max_length=8)
-	email = models.EmailField('Email', max_length=20)
+	email = models.EmailField('Email', max_length=20, blank=True)
 	senha = models.CharField('Senha', max_length=15)
 	admin = models.BooleanField('Administrador')
 	def __str__(self):
@@ -34,7 +33,7 @@ class Cliente(models.Model):
 
 
 class Pedido(models.Model):
-	data = models.DateField(auto_now=True, auto_now_add=False)
+	data = models.DateField('Data', auto_now=True, auto_now_add=False)
 	forma_pagamento = models.CharField('Forma de Pagamento', max_length=14)
 	id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
 

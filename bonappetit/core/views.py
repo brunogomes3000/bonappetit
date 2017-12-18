@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.http import HttpResponse 
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import redirect
-
+from .forms import ClienteForm
 
 #controlador da PÁGINA produtos
 def produtos(request):
@@ -43,7 +43,7 @@ def produto(request):
 
 def cadastro(request):
 	form = UserCreationForm(request.POST or None)
-	form2 = UserCreationForm(request.POST or None)
+	form2 = ClienteForm(request.POST or None)
 	context = {
 		'form': form,
 		'form2': form2
