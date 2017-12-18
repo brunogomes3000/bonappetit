@@ -9,7 +9,7 @@ from .models import Produto
 class ProdutoAdmin(admin.ModelAdmin):
 	list_display = ['nome', 'descricao', 'preco']
 	search_fields = ['nome']
-
+	list_filter = ['id_tipoProduto']
 
 admin.site.register(Produto, ProdutoAdmin)
 
