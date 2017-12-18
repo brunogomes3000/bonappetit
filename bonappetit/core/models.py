@@ -6,6 +6,8 @@ from django.db import models
 
 class Tipo_produto(models.Model):
 	descricao = models.CharField('Descrição', max_length=200)
+	def __str__(self):
+		return self.descricao
 
 class Produto(models.Model):
 	nome = models.CharField('Nome', max_length=50)
