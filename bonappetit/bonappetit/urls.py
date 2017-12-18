@@ -24,11 +24,10 @@ from django.contrib.auth.views import login
 
 
 urlpatterns = [
-	url(r'^$', views.Produto, name="Produto"),
 	url(r'^$', views.index, name="index"),
-    url(r'^produto/$', views.Produto, name="Produto"),
-    url(r'^consultarAlimentos/$', views.consultarAlimentos, name="consultarAlimentos"),
-    url(r'^pedido/$', views.Pedido, name="Pedido"),
+    url(r'^produto/$', views.produto, name="Produto"),
+    url(r'^pedido/$', views.pedido, name="Pedido"),
+    url(r'^relatorio/$', views.relatorio, name="relatorio"),
 	url(r'^usuario/$', views.usuario,name="usuario"),
 	url(r'^login/$', login, {'template_name':'login.html'}, name="login"),
 	url(r'^produtos/$', views.produtos, name="produtos"),
