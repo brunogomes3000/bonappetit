@@ -1,6 +1,54 @@
 {% extends "base.html"%}
 {% block conteudo %}
 <p>Página inicial</p>
+
+{% if not user.is_authenticated %}
+<div class="col-lg-8">
+	<h1>Cadastre-se!</h1>
+	 <p>Faça já o seu cadastro para comprar as melhores quentinhas!</p>
+</div>
+<div class="col-lg-4">
+	 <p class="pull-right"><br><a href="{% url 'cadastro' %}"><button
+	 type="button" class="btn btn-green">Cadastro</button></a> <a
+	 href="{% url 'login' %}"><button type="button" class="btn
+	 btn-green">Autenticar</button></a></p>
+	</div>
+
+{% else %}
+<div class="col-lg-8">
+	<h1>Bem-vindo {{user}}</h1>
+	 <p>Acesse sua página pessoal e veja o cardápio disponível!</p>
+</div>
+<div class="col-lg-4">
+	<p class="pull-right"><br><a href="{% url 'usuario' %}"><button
+	 type="button" class="btn btn-green">Página
+	 Pessoal</button></a></p>
+</div>
+{% endif %}
+
+<div class="row mt">
+
+{% for field in form %}
+    {% if field.errors %}
+        <div class="alert alert-danger">
+            {{ field.errors }}
+        </div>
+  {% endif %}
+{% endfor %}
+
+{% for field in form2 %}
+    {% if field.errors %}
+        <div class="alert alert-danger">
+            {{ field.errors }}
+        </div>
+  {% endif %}
+{% endfor %}
+
+<form action="{% url 'cadastro' %}" method="get
+
+
+
+
 <div class="col-md-10 content">
     <div class="panel panel-default">
       <div class="panel-heading">
