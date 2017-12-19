@@ -8,6 +8,24 @@ Cadastro | {{ block.super }}
 <hr/>
 <div class="container">
 <div class="row mt">
+{% for field in form %}
+{% if field.errors %}
+        <div class="alert alert-danger">
+            {{ field.label }}
+            {{ field.errors }}
+        </div>
+{% endif %}
+{% endfor %}
+{% for field in form2 %}
+{% if field.errors %}
+        <div class="alert alert-danger">
+			{{ field.label }}
+            {{ field.errors }}
+        </div>
+{% endif %}
+{% endfor %}
+
+
 <form action="{% url 'cadastro' %}" method="post">
 {% csrf_token %}
 <p>{{form2.nome.label}}: {{form2.nome}}</p>
@@ -15,7 +33,7 @@ Cadastro | {{ block.super }}
 
 <p>{{form2.cep.label}}: {{form2.cep}}</p>
 <p>{{form2.numero.label}}: {{form2.numero}}</p>
-<!--<p>{{form.username.label}}: {{form.username}}</p>-->
+<p>{{form.username.label}}: {{form.username}}</p>
 <p>{{form.password1.label}}: {{form.password1}}</p>
 <p>{{form.password2.label}}: {{form.password2}}</p>
 <p><input type="submit" value="Cadastrar" /></p>

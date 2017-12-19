@@ -11,7 +11,11 @@ from .forms import ClienteForm
 
 #controlador da PÁGINA produtos
 def produtos(request):
-	return render(request, 'produtos.html')
+	produtos = Produto.objects.all()
+	context = {
+		'produtos': produtos
+	}
+	return render(request, 'produtos.html', context)
 
 #controlador da PÁGINA cadastro
 def cadastro(request):
@@ -52,11 +56,14 @@ def cadastro(request):
 		if form.is_valid():
 			user_post = UserCreationForm(request.POST)
 			user = user_post.save(commit=False)
-			user.set_password(user_post.cleaned_data['password'])
+			user.set_password(user_post.cleaned_data['password1'])
 			user.save()
-			return redirect('/cadastro')
-		form.save()
+			return redirect('/sucesso')
 	return render(request, 'cadastro.html', context)
+
+	@login_required(login_url='login')
+	def usuario(request):
+		return render (request, 'usuario.html')
 
 
 
@@ -70,4 +77,7 @@ def usuario(request):
 
 def relatorio(request):
 	return render(request, 'relatorio.html')
+
+def sucesso(request):
+	return render(request, 'sucesso.html')
 

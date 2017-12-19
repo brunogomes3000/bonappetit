@@ -22,10 +22,10 @@ class Produto(models.Model):
 
 class Cliente(models.Model):
 	nome = models.CharField('Nome', max_length=50)
-	logradouro = models.CharField('Logradouro', max_length=30)
-	numero = models.CharField('Número', max_length=3)
-	cep = models.CharField('Cep', max_length=8)
-	email = models.EmailField('Email', max_length=20, blank=True)
+	logradouro = models.CharField('Logradouro', max_length=35, blank=True)
+	numero = models.CharField('Número', max_length=20, blank=True)
+	cep = models.CharField('Cep', max_length=8, blank=True)
+	email = models.EmailField('Email', max_length=30, blank=True)
 	senha = models.CharField('Senha', max_length=15)
 	admin = models.BooleanField('Administrador')
 	def __str__(self):
