@@ -21,7 +21,7 @@ from core import views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import login
-
+from django.contrib.auth.views import logout
 
 urlpatterns = [
 	url(r'^$', views.index, name="index"),
@@ -33,6 +33,8 @@ urlpatterns = [
 	url(r'^produtos/$', views.produtos, name="produtos"),
 	url(r'^cadastro/$', views.cadastro, name="cadastro"),
     url(r'^admin/', admin.site.urls),
-
+    url(r'^usuario/$', views.usuario, name="usuario"),
 ]
+
+
 
