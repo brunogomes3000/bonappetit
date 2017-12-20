@@ -4,15 +4,15 @@
 <div class="container">
 <div class="row mt">
  
-{% for produto in produtos %}
+
 
 <div class="col-lg-4">
-
-<h3><a href="#"> </a>{{produto.nome}}</h3>
+<form method="get" action="{% url 'consultarAlimentos' %}">
+		Público-Alvo: <select name="publicoget"> 
+		<option value=""></option>
+	</select>
 <p><a href="#"><i class="fa fa-link"></i> </a></p><br/>
 </div>
-
-{% endfor %}
 
 </div>
 </div>

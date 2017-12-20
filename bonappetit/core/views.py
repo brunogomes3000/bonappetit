@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from .models import Produto
 from .models import Pedido_produto
 from .models import Pedido
+from .models import Tipo_produto
 from django.shortcuts import render
 from django.http import HttpResponse 
 from django.contrib.auth.forms import UserCreationForm
@@ -21,9 +22,29 @@ def produtos(request):
 def cadastro(request):
 	return render(request, 'cadastro.html')	
 
+def usuario(request):
+	return render(request, 'usuario.html')
+
 def consultarAlimentos(request):
-	produtos = Produto.objects.all()
+	id_tipoProduto = Tipo_produto.objects.all()
+	#produtos.objects.get(id_tipoProduto=’12345678901’)
+
+	if request.method == 'GET':
+		if 'nome' in request.GET:
+			nome=request.GET.get("nome")
+		else:
+			nome=""
+		if 'tipoProdutoget' in requst.GET and request.GET.get("tipoProdutoget")!="Escolha um produto":
+			tipoProdutoget=request.GET.get('tipoProdutoget')
+		else:
+			tipoProdutoget=Produto.objects.values_list('id')
+
+
+
+
 	context = {
+		'nome': nome,
+		'tipoProfutoget': id_tipoProduto,
 		'produtos': produtos
 	}
 	return render(request, 'consultarAlimentos.html', context)
