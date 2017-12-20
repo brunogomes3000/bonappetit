@@ -1,20 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}
+Consultar alimentos | {{ block.super }}
+{% endblock  %}
 {% block conteudo %}
 
 <h1 class="centered">Lista de Alimentos</h1><br/>
 <div class="container">
-<div class="row mt">
- 
+	<div class="row mt">
 
 
-<div class="col-lg-4">
-<form method="get" action="{% url 'consultarAlimentos' %}">
-		Público-Alvo: <select name="publicoget"> 
-		<option value=""></option>
-	</select>
-<p><a href="#"><i class="fa fa-link"></i> </a></p><br/>
-</div>
 
-</div>
+		<div class="col-lg-4">
+			<form method="get" action="{% url 'consultarAlimentos' %}">
+				Tipo de produto: <select name="tipoProdutoget"> 
+				{%for prod in id_tipoProduto %}
+				<option value="{{prod.id}}">{{prod.descricao}}</option>
+				{%endfor%}
+			</select>
+		</div>
+
+	</div>
 </div>
 
 {% endblock %}

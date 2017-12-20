@@ -27,26 +27,18 @@ def usuario(request):
 
 def consultarAlimentos(request):
 	id_tipoProduto = Tipo_produto.objects.all()
-	#produtos.objects.get(id_tipoProduto=’12345678901’)
-
+	
 	if request.method == 'GET':
-		if 'nome' in request.GET:
-			nome=request.GET.get("nome")
-		else:
-			nome=""
-		if 'tipoProdutoget' in requst.GET and request.GET.get("tipoProdutoget")!="Escolha um produto":
-			tipoProdutoget=request.GET.get('tipoProdutoget')
-		else:
-			tipoProdutoget=Produto.objects.values_list('id')
-
-
+		if 'tipoProdutoget' in request.GET and request.GET.get("tipoProdutoget")!="": 
+			tipoProdutoget=request.GET.get("tipoProdutoget")
+	else:
+			tipoProdutoget=Produto.objects.values_list('id_tipoProduto')
 
 
 	context = {
-		'nome': nome,
-		'tipoProfutoget': id_tipoProduto,
-		'produtos': produtos
+		'id_tipoProduto': id_tipoProduto,
 	}
+
 	return render(request, 'consultarAlimentos.html', context)
 	
 
