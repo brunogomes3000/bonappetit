@@ -8,16 +8,28 @@ Consultar alimentos | {{ block.super }}
 <h1 class="centered">Lista de Alimentos</h1><br/>
 <div class="container">
 	<div class="row mt">
-
-
-
 		<div class="col-lg-4">
-			<form method="get" action="{% url 'consultarAlimentos' %}">
+
 				Tipo de produto: <select name="tipoProdutoget"> 
 				{%for prod in id_tipoProduto %}
-				<option value="{{prod.id}}">{{prod.descricao}}</option>
+				<option value="{{prod.id_tipoProduto}}">{{prod.descricao}}</option>
 				{%endfor%}
 			</select>
+
+			<button type="submit">Buscar</button></p>
+
+			</form>
+
+			{% for produto in produtos %}
+
+<div class="col-lg-4">
+
+<h3><a href="#"> </a>{{produto.nome}}</h3>
+<p><a href="#"><i class="fa fa-link"></i> </a></p><br/>
+</div>
+
+{% endfor %}
+
 		</div>
 
 	</div>

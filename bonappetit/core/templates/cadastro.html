@@ -26,6 +26,7 @@ Cadastro | {{ block.super }}
 {% endfor %}
 
 
+
 <form action="{% url 'cadastro' %}" method="post">
 {% csrf_token %}
 <p>{{form2.nome.label}}: {{form2.nome}}</p>

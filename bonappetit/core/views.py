@@ -27,16 +27,19 @@ def usuario(request):
 
 def consultarAlimentos(request):
 	id_tipoProduto = Tipo_produto.objects.all()
-	
+	produtos = Produto.objects.all()
 	if request.method == 'GET':
 		if 'tipoProdutoget' in request.GET and request.GET.get("tipoProdutoget")!="": 
 			tipoProdutoget=request.GET.get("tipoProdutoget")
-	else:
+		else:
 			tipoProdutoget=Produto.objects.values_list('id_tipoProduto')
+		produtos = Produto.objects.filter(id_tipoProduto__id__in = tipoProdutoget)
 
+	
 
 	context = {
 		'id_tipoProduto': id_tipoProduto,
+		'produtos': produtos
 	}
 
 	return render(request, 'consultarAlimentos.html', context)
