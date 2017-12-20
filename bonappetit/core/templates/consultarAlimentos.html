@@ -11,12 +11,13 @@ Consultar alimentos | {{ block.super }}
 		<div class="col-lg-4">
 
 				Tipo de produto: <select name="tipoProdutoget"> 
+
 				{%for prod in id_tipoProduto %}
 				<option value="{{prod.id_tipoProduto}}">{{prod.descricao}}</option>
 				{%endfor%}
 			</select>
 
-			<button type="submit">Buscar</button></p>
+				<button type="submit">Buscar</button></p>
 
 			</form>
 
